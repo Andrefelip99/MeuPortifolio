@@ -180,7 +180,7 @@ onUnmounted(() => {
         <article v-for="project in projects" :id="`project-${project.number}`" :key="project.number" class="project-entry">
           <div class="project-grid">
             <div class="project-info"><h3>{{ project.name }}<sup>↗</sup></h3><p class="project-summary">{{ project.summary }}</p><p class="project-detail">{{ project.detail }}</p><div class="tech-list"><span v-for="tech in project.stack" :key="tech">{{ tech }}</span></div><a class="project-link mono" :href="project.href" target="_blank" rel="noreferrer">{{ project.label }} <span>↗</span></a></div>
-            <div class="project-visual" role="group" :aria-label="`Galeria de imagens: ${project.name}`" @pointerdown="startGalleryDrag" @pointerup="endGalleryDrag($event, project.number)" @pointercancel="dragStartX = null">
+            <div :class="['project-visual', { 'project-visual-macedo': project.number === '02' }]" role="group" :aria-label="`Galeria de imagens: ${project.name}`" @pointerdown="startGalleryDrag" @pointerup="endGalleryDrag($event, project.number)" @pointercancel="dragStartX = null">
               <img :src="galleryIndex[project.number] === 0 ? project.image : project.secondary" :alt="galleryIndex[project.number] === 0 ? project.imageAlt : `Segunda captura do ${project.name}`" loading="lazy" draggable="false" />
               <span class="visual-stamp mono">{{ String(galleryIndex[project.number] + 1).padStart(2, '0') }} / 02</span>
               <div class="gallery-controls" :aria-label="`Controles da galeria ${project.name}`">
@@ -195,7 +195,7 @@ onUnmounted(() => {
 
       <section id="contato" class="contact section-pad">
         <div class="section-kicker mono" data-reveal><span>04 / PRÓXIMO PASSO</span><span>CANAL ABERTO</span></div>
-        <div class="contact-body" data-reveal><p class="eyebrow mono"><i></i> PRÓXIMA CONVERSA</p><h2>Uma boa ideia<br />começa com <em>oi.</em></h2><p class="contact-note">Gostou de algum projeto? Veja a versão publicada e conheça o trabalho de perto.</p><a class="contact-link" href="https://macedofarias.vercel.app/#/" target="_blank" rel="noreferrer">EXPLORAR MACEDO FARIAS <span>↗</span></a></div>
+        <div class="contact-body" data-reveal><p class="eyebrow mono"><i></i> PRÓXIMA CONVERSA</p><h2>Uma boa ideia<br />começa com <em>oi.</em></h2><p class="contact-note">Quer conversar sobre um projeto ou oportunidade? Me chama por aqui.</p><nav class="contact-links" aria-label="Canais de contato"><a href="https://www.linkedin.com/in/andre-felipe-339039339/" target="_blank" rel="noreferrer">LINKEDIN <span>↗</span></a><a href="https://www.instagram.com/andre.felipe99/" target="_blank" rel="noreferrer">INSTAGRAM <span>↗</span></a><a href="https://wa.me/5521990757721" target="_blank" rel="noreferrer">WHATSAPP <small>+55 21 99075-7721</small><span>↗</span></a></nav></div>
       </section>
     </main>
 
