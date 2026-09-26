@@ -63,6 +63,7 @@ Os arquivos finais são gerados na pasta `dist/`.
 .
 ├── JcDecorar/             # Capturas e informações do projeto JC Decorar
 ├── MacedoFarias/          # Capturas e informações do projeto Macedo Farias
+├── public/images/projects/ # Imagens servidas pelo Vite na versão publicada
 ├── src/
 │   ├── App.vue            # Conteúdo, dados dos projetos e cena interativa
 │   ├── main.js            # Inicialização do Vue

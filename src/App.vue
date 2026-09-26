@@ -12,14 +12,14 @@ const projects = [
     number: '01', name: 'JC Decorar', kind: 'API · BACKEND', summary: 'Uma base segura para administrar projetos de decoração.',
     detail: 'API REST desenvolvida com Java 21 e Spring Boot. Inclui operações de cadastro, consulta, atualização e remoção, com autenticação e persistência PostgreSQL.',
     stack: ['Java 21', 'Spring Boot', 'Spring Security', 'JWT', 'PostgreSQL', 'Docker'],
-    image: '/JcDecorar/JcDecorar(foto-1).png', secondary: '/JcDecorar/JcDecorar(foto-2).png', imageAlt: 'Tela do projeto JC Decorar',
+    image: '/images/projects/jc-decorar/foto-1.png', secondary: '/images/projects/jc-decorar/foto-2.png', imageAlt: 'Tela do projeto JC Decorar',
     href: 'https://jc-decorar-site.vercel.app/', label: 'ABRIR PROJETO'
   },
   {
     number: '02', name: 'Macedo Farias', kind: 'PLATAFORMA · CATÁLOGO', summary: 'Uma vitrine digital feita para aproximar produtos e pessoas.',
     detail: 'Catálogo de confeitaria com busca, categorias e área administrativa. Frontend Vue.js conectado a uma API Spring Boot, PostgreSQL e Cloudinary para imagens.',
     stack: ['Vue.js', 'Java', 'Spring Boot', 'PostgreSQL', 'Cloudinary', 'GSAP'],
-    image: '/MacedoFarias/MacedoFarias(foto-1).png', secondary: '/MacedoFarias/MacedoFarias(foto-2).png', imageAlt: 'Tela do catálogo Macedo Farias',
+    image: '/images/projects/macedo-farias/foto-1.png', secondary: '/images/projects/macedo-farias/foto-2.png', imageAlt: 'Tela do catálogo Macedo Farias',
     href: 'https://macedofarias.vercel.app/#/', label: 'ABRIR PROJETO'
   }
 ]
