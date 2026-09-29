@@ -21,12 +21,19 @@ const projects = [
     stack: ['Vue.js', 'Java', 'Spring Boot', 'PostgreSQL', 'Cloudinary', 'GSAP'],
     image: '/images/projects/macedo-farias/foto-1.png', secondary: '/images/projects/macedo-farias/foto-2.png', imageAlt: 'Tela do catálogo Macedo Farias',
     href: 'https://macedofarias.vercel.app/#/', label: 'ABRIR PROJETO'
+  },
+  {
+    number: '03', name: 'DSCommerce', kind: 'API · E-COMMERCE', summary: 'Uma API de comércio eletrônico com catálogo, pedidos e controle de acesso.',
+    detail: 'API REST para gerenciamento de usuários, produtos, categorias e pedidos, com arquitetura em camadas, autenticação OAuth2/JWT e persistência PostgreSQL.',
+    stack: ['Java 17', 'Spring Boot', 'Spring Data JPA', 'Spring Security', 'OAuth2/JWT', 'PostgreSQL'],
+    image: '/images/projects/dscommerce/foto-1.png', secondary: '/images/projects/dscommerce/foto-2.png', imageAlt: 'Tela do projeto DSCommerce',
+    href: 'https://ds-commerce.vercel.app/', label: 'ABRIR PROJETO'
   }
 ]
 
 const canvas = ref(null)
 const activeProject = ref('01')
-const galleryIndex = ref({ '01': 0, '02': 0 })
+const galleryIndex = ref({ '01': 0, '02': 0, '03': 0 })
 let renderer, scene, camera, core, frameId, lenis, ticker
 let pointer = { x: 0, y: 0 }
 let target = { x: 0, y: 0 }
@@ -176,7 +183,7 @@ onUnmounted(() => {
 
       <section id="projetos" class="projects section-pad">
         <div class="section-kicker mono" data-reveal><span>03 / PROJETOS</span></div>
-        <div class="projects-heading" data-reveal><h2>Trabalho em<br /><em>execução.</em></h2><p>Dois projetos. Problemas diferentes.<br />Uma vontade de fazer funcionar.</p></div>
+        <div class="projects-heading" data-reveal><h2>Trabalho em<br /><em>execução.</em></h2><p>Três projetos. Problemas diferentes.<br />Uma vontade de fazer funcionar.</p></div>
         <article v-for="project in projects" :id="`project-${project.number}`" :key="project.number" class="project-entry">
           <div class="project-grid">
             <div class="project-info"><h3>{{ project.name }}<sup>↗</sup></h3><p class="project-summary">{{ project.summary }}</p><p class="project-detail">{{ project.detail }}</p><div class="tech-list"><span v-for="tech in project.stack" :key="tech">{{ tech }}</span></div><a class="project-link mono" :href="project.href" target="_blank" rel="noreferrer">{{ project.label }} <span>↗</span></a></div>
