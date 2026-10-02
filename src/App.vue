@@ -28,12 +28,19 @@ const projects = [
     stack: ['Java 17', 'Spring Boot', 'Spring Data JPA', 'Spring Security', 'OAuth2/JWT', 'PostgreSQL'],
     image: '/images/projects/dscommerce/foto-1.png', secondary: '/images/projects/dscommerce/foto-2.png', imageAlt: 'Tela do projeto DSCommerce',
     href: 'https://ds-commerce.vercel.app/', label: 'ABRIR PROJETO'
+  },
+  {
+    number: '04', name: 'BoloDeLaMadre', kind: 'SISTEMA · GESTÃO EMPRESARIAL', summary: 'Uma plataforma de gestão para conectar a operação e as finanças de uma confeitaria.',
+    detail: 'Sistema backend em Java 21 e Spring Boot para gerenciar produtos, vendas, compras, despesas e fluxo de caixa. Conta com autenticação JWT, níveis de acesso e um assistente de gestão baseado em dados do sistema.',
+    stack: ['Java 21', 'Spring Boot', 'Spring Security', 'JWT', 'Spring Data JPA', 'PostgreSQL'],
+    image: '/images/projects/bolo-de-la-madre/foto-1.png', secondary: '/images/projects/bolo-de-la-madre/foto-2.png', imageAlt: 'Tela do sistema BoloDeLaMadre',
+    href: 'https://front-bdlm.vercel.app/login', label: 'ABRIR PROJETO'
   }
 ]
 
 const canvas = ref(null)
 const activeProject = ref('01')
-const galleryIndex = ref({ '01': 0, '02': 0, '03': 0 })
+const galleryIndex = ref({ '01': 0, '02': 0, '03': 0, '04': 0 })
 let renderer, scene, camera, core, frameId, lenis, ticker
 let pointer = { x: 0, y: 0 }
 let target = { x: 0, y: 0 }
@@ -183,11 +190,11 @@ onUnmounted(() => {
 
       <section id="projetos" class="projects section-pad">
         <div class="section-kicker mono" data-reveal><span>03 / PROJETOS</span></div>
-        <div class="projects-heading" data-reveal><h2>Trabalho em<br /><em>execução.</em></h2><p>Três projetos. Problemas diferentes.<br />Uma vontade de fazer funcionar.</p></div>
+        <div class="projects-heading" data-reveal><h2>Trabalho em<br /><em>execução.</em></h2><p>Quatro projetos. Problemas diferentes.<br />Uma vontade de fazer funcionar.</p></div>
         <article v-for="project in projects" :id="`project-${project.number}`" :key="project.number" class="project-entry">
           <div class="project-grid">
             <div class="project-info"><h3>{{ project.name }}<sup>↗</sup></h3><p class="project-summary">{{ project.summary }}</p><p class="project-detail">{{ project.detail }}</p><div class="tech-list"><span v-for="tech in project.stack" :key="tech">{{ tech }}</span></div><a class="project-link mono" :href="project.href" target="_blank" rel="noreferrer">{{ project.label }} <span>↗</span></a></div>
-            <div :class="['project-visual', { 'project-visual-macedo': project.number === '02', 'project-visual-jc': project.number === '01' }]" role="group" :aria-label="`Galeria de imagens: ${project.name}`" @pointerdown="startGalleryDrag" @pointerup="endGalleryDrag($event, project.number)" @pointercancel="dragStartX = null">
+            <div :class="['project-visual', { 'project-visual-macedo': project.number === '02', 'project-visual-jc': project.number === '01', 'project-visual-bolo': project.number === '04' }]" role="group" :aria-label="`Galeria de imagens: ${project.name}`" @pointerdown="startGalleryDrag" @pointerup="endGalleryDrag($event, project.number)" @pointercancel="dragStartX = null">
               <img :src="galleryIndex[project.number] === 0 ? project.image : project.secondary" :alt="galleryIndex[project.number] === 0 ? project.imageAlt : `Segunda captura do ${project.name}`" loading="lazy" draggable="false" />
               <span class="visual-stamp mono">{{ String(galleryIndex[project.number] + 1).padStart(2, '0') }} / 02</span>
               <div class="gallery-controls" :aria-label="`Controles da galeria ${project.name}`">

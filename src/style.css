@@ -11,3 +11,5 @@
 .project-visual-jc{background:#191a18}.project-visual-jc img{object-fit:contain}
 .contact-links{display:flex;gap:12px;margin-top:32px;max-width:720px}.contact-links a{flex:1;min-height:62px;display:flex;align-items:center;gap:9px;padding:0 15px;border:1px solid #ffffff2b;color:#e1e3da;font:10px var(--mono);letter-spacing:.06em;transition:border-color .2s,color .2s,background .2s}.contact-links a:hover{border-color:var(--accent);color:var(--accent);background:#c9e68b0b}.contact-links a span{margin-left:auto;color:var(--accent)}.contact-links a small{font:9px var(--mono);color:#aeb1a6;letter-spacing:0}
 @media(max-width:520px){.contact-links{flex-direction:column;gap:8px}.contact-links a{min-height:54px}.contact-links a small{margin-left:auto}.contact-links a span{margin-left:0}}
+
+.project-visual-bolo{background:#f7f2e9}.project-visual-bolo img{object-fit:contain}
